@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="{% block ng_app %}{% endblock %}">
+
+<head>
+<meta charset="utf-8">
+
+{% load staticfiles %} 
+
+<title> {% block title%}{% endblock %} </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="google" value="notranslate">
+
+<link  href="{% static 'css/material.min.css' %}" rel="stylesheet">
+<link  href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+<script src="{% static 'js/material.min.js' %} "></script>
+<script src="{% static 'js/angular.min.js' %} "></script>
+
+{% block linkscript %} {% endblock %}
+
+<style>
+
+.mdl-menu_cust .mdl-layout__tab-bar-button {
+  display: none;
+}
+#topmenu{
+height: 32px;
+}
+#secondmenu {
+padding: 0;
+padding-left: 16px;
+height: 64px;
+width: 100%;
+}
+
+.navigation__drodown{position:relative}
+.navigation__drodown>ul{z-index:-1;position:absolute;opacity:0;-webkit-transition:all 150ms ease;transition:all 150ms ease;background:#fff;margin:0;padding:0;box-shadow:0 6px 12px rgba(0,0,0,0.175);border-radius:0 0 4px 4px;width:100%;top:-200px;left:0}
+.navigation__drodown>ul li{list-style:none;margin:0;text-align:left}
+.navigation__drodown>ul li a{color:#333333;display:block;text-decoration:none;font-size:14px;padding:10px 15px;text-transform:capitalize;background-color:#fff}
+.navigation__drodown>ul li a:hover{background-color:#f5f5f5}
+.navigation__drodown:hover>ul{opacity:1;top:34px}
+
+
+</style>
+
+</head>
+
+<body class="mdl-menu_cust mdl-base mdl-color--grey-100 mdl-color-text--grey-700">
+
+<!-- ng-controller="{% block ng_controller %}{% endblock %}" -->
+{% block content %}  
+{% verbatim %}
+
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fix-header">
+  <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary ">
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row" id="topmenu">
+	  <ul><li> 
+      <button id="menu-speed1" class="mdl-button mdl-button--accent">
+          Button2
+	  </button>
+	  </li>
+		<ul class="mdl-menu">
+		  <li class="mdl-menu__item">Fast</li>
+		  <li class="mdl-menu__item">Medium</li>
+		  <li class="mdl-menu__item">Slow</li>
+		</ul> 
+		
+		 
+    </div>
+         
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark" id="secondmenu">
+	<ul>
+	<li class="navigation__dropdown">    
+	<a herf="#" id="menu-speed" > 	OverAll </a>
+	
+	<ul class="mdl-menu">
+	<li class="mdl-menu__item"><a href="#">mobileFast</a></li>
+	<li class="mdl-menu__item"><a href="#">mobileMedium</a></li>
+	<li class="mdl-menu__item"><a href="#">mobileSlow</a></li>
+	</ul>
+	</li>
+	</ul>
+
+		      <a href="#features" class="mdl-layout__tab">Features</a>
+      <a href="#features" class="mdl-layout__tab">Details</a>
+      <a href="#features" class="mdl-layout__tab">Technology</a>
+      <a href="#features" class="mdl-layout__tab">FAQ</a>
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+        <i class="material-icons" role="presentation">add</i>
+        <span class="visuallyhidden">Add</span>
+      </button>
+    </div>
+  </header> 
+  
+  
+  <main class="mdl-layout__content">
+  	<div class="page-content">
+  	
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+		  Button
+		</button>
+		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+		  <i class="material-icons">add</i>
+		</button>  	
+  	
+  	</div>
+  
+  </main>
+</div>
+
+{% endverbatim %}  
+{% endblock %}
+
+
+
+</body>
+
+</html>

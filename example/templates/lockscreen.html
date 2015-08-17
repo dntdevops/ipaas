@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>登录超时</title>
+    <meta name="keywords" content="云管理平台">
+    <meta name="description" content="协作式开发管理平台">
+
+	{% load staticfiles %} 
+	{% block linkscript %} {% endblock %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	
+	<!-- Mainly scripts -->
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="lock-word animated fadeInDown">
+    </div>
+    <div class="middle-box text-center lockscreen animated fadeInDown">
+        <div>
+            <div class="m-b-md">
+                <img alt="image" class="img-circle circle-border" src="{% static 'img/a1.jpg' %}">
+            </div>
+            <h3>小子别跑</h3>
+            <p>您需要再次输入密码</p>
+            <form class="m-t" role="form" action="/example/">
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="******" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width">登录到DNT云管理平台</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
