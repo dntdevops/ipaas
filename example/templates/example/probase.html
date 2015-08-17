@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{%block title %}首页{% endblock %}</title>
+    <meta name="keywords" content="云管理平台">
+    <meta name="description" content="协作式开发管理平台">
+
+{% load staticfiles %} 
+{% block linkscript %} {% endblock %}
+
+    <link href="{% static 'css/bootstrap.min.css' %} " rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- Mainly scripts -->
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins/metisMenu/jquery.metisMenu.js' %}"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="{% static 'js/hplus.js' %}"></script>
+
+    
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+
+                        <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="{% static 'img/profile.jpg' %}" />
+                             </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="/example/index/#">
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Admin</strong>
+                             </span> <span class="text-muted text-xs block">超级管理员 <b class="caret"></b></span> </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="/example/form_avatar/">修改头像</a>
+                                </li>
+                                <li><a href="/example/profile/">个人资料</a>
+                                </li>
+                                <li><a href="/example/contacts/">联系我们</a>
+                                </li>
+                                <li><a href="/example/mailbox/">信箱</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="/example/login/">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            H+
+                        </div>
+
+                    </li>
+                    <li class="active">
+                        <a href="/example/index/"><i class="fa fa-th-large"></i> <span class="nav-label">主页</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/index_1/">主页示例一</a>
+                            </li>
+                            <li><a href="/example/index_2/">主页示例二</a>
+                            </li>
+                            <li><a href="/example/index_3/">主页示例三</a>
+                            </li>
+                            <li><a href="/example/index_4/">主页示例四</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/layouts/"><i class="fa fa-columns"></i> <span class="nav-label">布局</span><span class="label label-danger pull-right">2.0</span></a>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa fa-globe"></i> <span class="nav-label">v2.0新增</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/toastr_notifications/">Toastr通知</a>
+                            </li>
+                            <li><a href="/example/nestable_list/">嵌套列表</a>
+                            </li>
+                            <li><a href="/example/timeline_v2/">时间轴</a>
+                            </li>
+                            <li><a href="/example/forum_main/">论坛</a>
+                            </li>
+                            <li><a href="/example/code_editor/">代码编辑器</a>
+                            </li>
+                            <li><a href="/example/modal_window/">模态窗口</a>
+                            </li>
+                            <li><a href="/example/validation/">表单验证</a>
+                            </li>
+                            <li><a href="/example/tree_view_v2/">树形视图</a>
+                            </li>
+                            <li><a href="/example/chat_view/">聊天窗口</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">图表</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/graph_echarts/">百度ECharts</a>
+                            </li>
+                            <li><a href="/example/graph_flot/">Flot</a>
+                            </li>
+                            <li><a href="/example/graph_morris/">Morris.js</a>
+                            </li>
+                            <li><a href="/example/graph_rickshaw/">Rickshaw</a>
+                            </li>
+                            <li><a href="/example/graph_peity/">Peity</a>
+                            </li>
+                            <li><a href="/example/graph_sparkline/">Sparkline</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/mailbox/"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span class="label label-warning pull-right">16</span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/mailbox/">收件箱</a>
+                            </li>
+                            <li><a href="/example/mail_detail/">查看邮件</a>
+                            </li>
+                            <li><a href="/example/mail_compose/">写信</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/widgets/"><i class="fa fa-flask"></i> <span class="nav-label">小工具</span></a>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/form_basic/">基本表单</a>
+                            </li>
+                            <li><a href="/example/form_validate/">表单验证</a>
+                            </li>
+                            <li><a href="/example/form_advanced/">高级插件</a>
+                            </li>
+                            <li><a href="/example/form_wizard/">步骤条</a>
+                            </li>
+                            <li><a href="/example/form_webuploader/">百度WebUploader</a>
+                            </li>
+                            <li><a href="/example/form_file_upload/">文件上传</a>
+                            </li>
+                            <li><a href="/example/form_editors/">富文本编辑器</a>
+                            </li>
+                            <li><a href="/example/form_simditor/">simditor</a>
+                            </li>
+                            <li><a href="/example/form_avatar/">头像裁剪上传</a>
+                            </li>
+                            <li><a href="/example/layerdate/">日期选择器layerDate</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-desktop"></i> <span class="nav-label">页面</span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/contacts/">联系人</a>
+                            </li>
+                            <li><a href="/example/profile/">个人资料</a>
+                            </li>
+                            <li><a href="/example/projects/">项目</a>
+                            </li>
+                            <li><a href="/example/project_detail/">项目详情</a>
+                            </li>
+                            <li><a href="/example/file_manager/">文件管理器</a>
+                            </li>
+                            <li><a href="/example/calendar/">日历</a>
+                            </li>
+                            <li><a href="/example/faq/">帮助中心</a>
+                            </li>
+                            <li><a href="/example/timeline/">时间轴</a>
+                            </li>
+                            <li><a href="/example/pin_board/">标签墙</a>
+                            </li>
+                            <li><a href="/example/invoice/">单据</a>
+                            </li>
+                            <li><a href="/example/login/">登录</a>
+                            </li>
+                            <li><a href="/example/register/">注册</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-files-o"></i> <span class="nav-label">其他页面</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/search_results/">搜索结果</a>
+                            </li>
+                            <li><a href="/example/lockscreen/">登录超时</a>
+                            </li>
+                            <li><a href="/example/404/">404页面</a>
+                            </li>
+                            <li><a href="/example/500/">500页面</a>
+                            </li>
+                            <li><a href="/example/empty_page/">空白页</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-flask"></i> <span class="nav-label">UI元素</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/typography/">排版</a>
+                            </li>
+                            <li><a href="/example/icons/">字体图标</a>
+                            </li>
+                            <li><a href="/example/iconfont/">阿里巴巴矢量图标库</a>
+                            </li>
+                            <li><a href="/example/draggable_panels/">拖动面板</a>
+                            </li>
+                            <li><a href="/example/buttons/">按钮</a>
+                            </li>
+                            <li><a href="/example/tabs_panels/">选项卡 & 面板</a>
+                            </li>
+                            <li><a href="/example/notifications/">通知 & 提示</a>
+                            </li>
+                            <li><a href="/example/badges_labels/">徽章，标签，进度条</a>
+                            </li>
+                            <li><a href="/example/layer/">Web弹层组件layer</a>
+                            </li>
+                            <li><a href="/example/tree_view/">树形视图</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/grid_options/"><i class="fa fa-laptop"></i> <span class="nav-label">栅格</span></a>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/table_basic/">基本表格</a>
+                            </li>
+                            <li><a href="/example/table_data_tables/">数据表格(DataTables)</a>
+                            </li>
+                            <li><a href="/example/table_jqgrid/">jqGrid</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-picture-o"></i> <span class="nav-label">图库</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/basic_gallery/">基本图库</a>
+                            </li>
+                            <li><a href="/example/carousel/">图片切换</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-sitemap"></i> <span class="nav-label">菜单 </span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/example/index/#">三级菜单 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="/example/index/#">三级菜单 01</a>
+                                    </li>
+                                    <li>
+                                        <a href="/example/index/#">三级菜单 01</a>
+                                    </li>
+                                    <li>
+                                        <a href="/example/index/#">三级菜单 01</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li><a href="/example/index/#">二级菜单</a>
+                            </li>
+                            <li>
+                                <a href="/example/index/#">二级菜单</a>
+                            </li>
+                            <li>
+                                <a href="/example/index/#">二级菜单</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/example/webim/"><i class="fa fa-comments"></i> <span class="nav-label">即时通讯</span><span class="label label-danger pull-right">New</span></a>
+                    </li>
+                    <li>
+                        <a href="/example/css_animation/"><i class="fa fa-magic"></i> <span class="nav-label">CSS动画</span></a>
+                    </li>
+                    <li>
+                        <a href="/example/index/#"><i class="fa fa-cutlery"></i> <span class="nav-label">工具 </span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/example/form_builder/">表单构建器</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        <!-- end nva -->
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="/example/index/#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" method="post" action="search_results/">
+                            <div class="form-group">
+                                <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message"><a href="index/" title="返回首页"><i class="fa fa-home"></i></a>欢迎使用DNT云管理平台</span>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="/example/index/#">
+                                <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-messages">
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a href="/example/profile/" class="pull-left">
+                                            <img alt="image" class="img-circle" src="{% static 'img/a7.jpg' %}">
+                                        </a>
+                                        <div class="media-body">
+                                            <small class="pull-right">46小时前</small>
+                                            <strong>小四</strong> 项目已处理完结
+                                            <br>
+                                            <small class="text-muted">3天前 2014.11.8</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a href="/example/profile/" class="pull-left">
+                                            <img alt="image" class="img-circle" src="{% static 'img/a4.jpg' %}">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="pull-right text-navy">25小时前</small>
+                                            <strong>国民岳父</strong> 这是一条测试信息
+                                            <br>
+                                            <small class="text-muted">昨天</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="/example/mailbox/">
+                                            <i class="fa fa-envelope"></i> <strong> 查看所有消息</strong>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="index/#">
+                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="/example/mailbox/">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i> 您有16条未读消息
+                                            <span class="pull-right text-muted small">4分钟前</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/example/profile/">
+                                        <div>
+                                            <i class="fa fa-qq fa-fw"></i> 3条新回复
+                                            <span class="pull-right text-muted small">12分钟钱</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="/example/notifications/">
+                                            <strong>查看所有 </strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/example/login/">
+                                <i class="fa fa-sign-out"></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+                <!-- end head nav -->
+                </nav>
+             <!-- end of row border-bottom -->   
+            </div>
+           {% block contents %}
+           {% endblock %}
+            <div class="footer">
+                <div class="pull-right">
+                    By：<a href="http://www.dnt.com.cn" target="_blank">DNT</a>
+                </div>
+                <div>
+                    <strong>Copyright</strong> DNT &copy; 2015
+                </div>
+            </div>
+            <!-- end page-wrapper -->
+            </div>
+        <!-- end wrapper -->
+
+
+</body>
+
+
+</html>
